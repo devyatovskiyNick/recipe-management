@@ -28,6 +28,8 @@ class ShoppingList:
         for ingredient, title in self._items:
             key = (ingredient.name, ingredient.unit)
 
+            if key not in all_items: all_items[key] = 0
+
             all_items[key] += ingredient.quantity
 
         res = []

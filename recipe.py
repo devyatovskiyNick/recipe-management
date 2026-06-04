@@ -20,7 +20,7 @@ class Recipe:
 
     def scale(self, ratio:float):
         if not self.is_valid_ratio(ratio):
-            raise ValueError("ratio должно быть > 0")
+            raise ValueError("ratio должно быть больше 0")
 
         new_ingredients = []
         for ingredient in self.ingredients:

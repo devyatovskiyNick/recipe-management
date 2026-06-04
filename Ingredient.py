@@ -5,9 +5,13 @@ class Ingredient:
         self.unit = unit
 
     @property
-    def quantity(self, val):
-        pass
+    def quantity(self):
+        return self._quantity
 
+    @quantity.setter
+    def quantity(self, value):
+        if value <= 0: raise ValueError("Количество должно быть положительным")
+        self._quantity = float(value)
 
     def __str__(self):
         return f"{self.name}: {self.quantity} {self.unit}"
@@ -16,7 +20,7 @@ class Ingredient:
         return f"Ingredient('{self.name}', {self.quantity}, '{self.unit}')"
 
     def __eq__(self, other):
-        if self.name == other.name and self.unit == other.unit:
+        if type(other) == Ingredient and self.name == other.name and self.unit == other.unit:
             return True
         else:
             return False
