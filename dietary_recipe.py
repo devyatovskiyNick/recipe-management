@@ -1,7 +1,9 @@
+from recipe import Recipe
+
+
 class DietaryRecipe(Recipe):
-    def __init__(self, title:str, diet_type:str, ingredients:list):
-        self.title = title
-        self.ingredients = ingredients
+    def __init__(self, title: str, diet_type: str, ingredients: list):
+        super().__init__(title, ingredients)
         self.diet_type = diet_type
 
     def scale(self, ratio:float):
