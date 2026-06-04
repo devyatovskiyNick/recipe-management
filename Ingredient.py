@@ -10,10 +10,13 @@ class Ingredient:
 
 
     def __str__(self):
-        pass
+        return f"{self.name}: {self.quantity} {self.unit}"
 
     def __repr__(self):
-        pass
+        return f"Ingredient('{self.name}', {self.quantity}, '{self.unit}')"
 
     def __eq__(self, other):
-        pass
+        if self.name == other.name and self.unit == other.unit:
+            return True
+        else:
+            return False
