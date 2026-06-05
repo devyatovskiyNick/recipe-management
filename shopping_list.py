@@ -1,6 +1,7 @@
 from recipe import Recipe
 from Ingredient import Ingredient
 
+
 class ShoppingList:
     def __init__(self):
         self._items = []
@@ -37,7 +38,7 @@ class ShoppingList:
             res.append(Ingredient(name, quantity, unit))
         return sorted(res, key=lambda i: i.name)
 
-    def __add__(self, other:ShoppingList):
+    def __add__(self, other):
         new_list = ShoppingList()
         new_list._items = self._items + other._items
         return new_list
