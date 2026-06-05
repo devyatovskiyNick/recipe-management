@@ -12,6 +12,9 @@ git clone https://github.com/devyatovskiyNick/recipe-management
 cd recipe-management
 pip install -r requirements.txt
 pytest
+
+# если bash не находит команду pytest
+python -m pytest
 ```
 
 
