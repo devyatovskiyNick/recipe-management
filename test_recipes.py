@@ -28,20 +28,22 @@ def test_eq():
 
 
 
-
-
-ingredients = [Ingredient("яйца", 2, "шт"), Ingredient("соль", 1, "ст.л"),
-                   Ingredient("помидоры", 0.5, "шт")]
 def test_create_recipe():
+    ingredients = [Ingredient("яйца", 2, "шт"), Ingredient("соль", 1, "ст.л"),
+                   Ingredient("помидоры", 0.5, "шт")]
     recipe = Recipe("яичница", ingredients)
     assert recipe.title == "яичница"
     assert recipe.ingredients == ingredients
 
 def test_len():
+    ingredients = [Ingredient("яйца", 2, "шт"), Ingredient("соль", 1, "ст.л"),
+                   Ingredient("помидоры", 0.5, "шт")]
     recipe = Recipe("яичница", ingredients)
     assert len(recipe) == 3
 
 def test_add_ingredient():
+    ingredients = [Ingredient("яйца", 2, "шт"), Ingredient("соль", 1, "ст.л"),
+                   Ingredient("помидоры", 0.5, "шт")]
     recipe = Recipe("яичница", ingredients)
 
     recipe.add_ingredient(Ingredient("лук", 12, "г"))
@@ -53,6 +55,8 @@ def test_add_ingredient():
     assert recipe.ingredients[0].quantity == 4
 
 def test_scale():
+    ingredients = [Ingredient("яйца", 2, "шт"), Ingredient("соль", 1, "ст.л"),
+                   Ingredient("помидоры", 0.5, "шт")]
     recipe = Recipe("яичница", ingredients)
     scaled_recipe = recipe.scale(4.2)
     assert recipe is not scaled_recipe
